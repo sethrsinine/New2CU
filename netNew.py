@@ -1,5 +1,7 @@
+import os
 # 修改了urllib文件夹下request 的ProxySever参数 具体是proxyServer: 可以通过ctrl+F 定位到修改的位置
 import streamlit as st
+import base64
 from openai import OpenAI
 
 client = OpenAI(
@@ -35,14 +37,16 @@ def init_chat():
 st.markdown("""
 <style>.st-emotion-cache-1c7y2kd {flex-direction: row-reverse; text-align:right }</style>
 """, unsafe_allow_html=True)
-
+# with open('pong.png') as image_file:
+#     encoded_image = base64.b64encode(image_file.read()).decode()
+image_path = 'pong.png'
 # 左侧
 with st.sidebar:
     # 支持 markdown 语法
     st.markdown(f"""
     <center>
-    <img src='https://iconfont.alicdn.com/p/illus/preview_image/eZQFvSX6g8f1/e476dc01-f9f5-4f7f-928c-5c6d4b466875.png' height='100' width='100' border-radius = 50%/>
-    <h1> hellobot <sup>💬</sup><h1/>
+    <img src='data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}'  height='100' width='100' border-radius = 50%/>
+    <h1> hellobot<h1/>
     </center>
     """, unsafe_allow_html=True)
 
