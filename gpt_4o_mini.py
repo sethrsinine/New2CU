@@ -16,8 +16,8 @@ def chat_stream():
     # 发送流式请求给 OpenAI 服务器
     response = client.chat.completions.create(
         # 公司内部，一般接入的是自己的模型（垂直模型、行业模型）
-        model='net-gpt-3.5-turbo',  # 接入的大模型  gpt-4o mini ,接入 最新的产品 能力
-        # model='gpt-4o-mini', 
+        # model='net-gpt-3.5-turbo',  # 接入的大模型  gpt-4o mini ,接入 最新的产品 能力
+        model='gpt-4o-mini', 
         messages=st.session_state.messages_history,
         temperature=0,
         stream=True  # 设置 stream=True
