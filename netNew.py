@@ -6,7 +6,7 @@ from openai import OpenAI
 
 client = OpenAI(
     api_key="sk-fIRlLTNJO7EpNN1Z1dB3Af71144b450792Fb7cBe12Bd898d",
-    base_url="https://free.gpt.ge/v1/",
+    base_url="https://free.v36.cm/v1/",
     default_headers = {"x-foo": "true"}
 )
 
